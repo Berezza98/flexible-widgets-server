@@ -13,9 +13,8 @@ app.get('/getFonts', (req, res) => {
 
 app.get('/getImages', (req, res) => {
     setTimeout(() => {
-        res.send(JSON.stringify(["https://i.ytimg.com/vi/mmfEzGWOYPA/hqdefault.jpg", "https://i.ytimg.com/vi/mmfEzGWOYPA/hqdefault.jpg" , "https://i.ytimg.com/vi/mmfEzGWOYPA/hqdefault.jpg", "https://i.ytimg.com/vi/mmfEzGWOYPA/hqdefault.jpg", "https://i.ytimg.com/vi/mmfEzGWOYPA/hqdefault.jpg", "https://i.ytimg.com/vi/mmfEzGWOYPA/hqdefault.jpg" , "https://i.ytimg.com/vi/mmfEzGWOYPA/hqdefault.jpg", "https://i.ytimg.com/vi/mmfEzGWOYPA/hqdefault.jpg"]));
+        res.send(JSON.stringify(["https://i.ytimg.com/vi/yA30K3z5PSw/hqdefault_live.jpg","https://i.ytimg.com/vi/yA30K3z5PSw/hqdefault_live.jpg", "https://i.ytimg.com/vi/yA30K3z5PSw/hqdefault_live.jpg", "https://i.ytimg.com/vi/yA30K3z5PSw/hqdefault_live.jpg", "https://i.ytimg.com/vi/yA30K3z5PSw/hqdefault_live.jpg","https://i.ytimg.com/vi/yA30K3z5PSw/hqdefault_live.jpg","https://i.ytimg.com/vi/yA30K3z5PSw/hqdefault_live.jpg","https://i.ytimg.com/vi/yA30K3z5PSw/hqdefault_live.jpg", "https://i.ytimg.com/vi/yA30K3z5PSw/hqdefault_live.jpg"]));        
     }, 1000);
-    
 });
 
 app.listen(3300);
