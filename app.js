@@ -6,10 +6,10 @@ const { getFonts } = require('./get_data');
 const app = express();
 app.use(cors());
 
-app.get('/getFonts', async (req, res) => {
-    let fonts = await getFonts();
+app.get('/getFonts', (req, res) => {
+    // let fonts = await getFonts();
     setTimeout(() => {
-        res.send(JSON.stringify(fonts));
+        res.send(JSON.stringify(['Arial', 'Gadget', 'Charcoal', 'monospace', 'Georgia', 'Palatino', 'cursive', 'Verdana']));
     }, 500);
     
 });
