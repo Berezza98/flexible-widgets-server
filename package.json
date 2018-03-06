@@ -10,9 +10,12 @@
   "license": "ISC",
   "dependencies": {
     "async-request": "^1.2.0",
+    "base64-img": "^1.0.4",
     "body-parser": "^1.18.2",
     "cheerio": "^1.0.0-rc.2",
     "cors": "^2.8.4",
-    "express": "^4.16.2"
+    "express": "^4.16.2",
+    "jsonfile": "^4.0.0",
+    "jsonfile-updater": "^3.1.0"
   }
 }
