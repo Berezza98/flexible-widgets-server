@@ -27,7 +27,32 @@ app.get('/getImages', async (req, res) => {
     let img1 = await toBase64(__dirname + '/public/images/1.png');
     let img2 = await toBase64(__dirname + '/public/images/2.jpg');
     setTimeout(() => {
-        res.send(JSON.stringify([img2, img1, img2, img1, img2]));        
+        res.send(JSON.stringify([
+            {
+                name: "Image 1",
+                src: img1
+            },
+            {
+                name: "Image 2",
+                src: img2
+            },
+            {
+                name: "Image 3",
+                src: img1
+            },
+            {
+                name: "Image 4",
+                src: img2
+            },
+            {
+                name: "Image 5",
+                src: img1
+            },
+            {
+                name: "Image 6",
+                src: img2
+            }
+        ]));        
     }, 1000);
 });
 
