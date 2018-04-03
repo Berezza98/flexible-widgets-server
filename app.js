@@ -8,6 +8,7 @@ const util = require('util');
 
 const { getFonts } = require('./get_data');
 const file = './templates.json';
+const { images } = require('./images');
 
 const app = express();
 app.use(cors());
@@ -23,37 +24,23 @@ app.get('/getFonts', (req, res) => {
 });
 
 app.get('/getImages', async (req, res) => {
-    const toBase64 = util.promisify(base64Img.base64);
-    let img1 = await toBase64(__dirname + '/public/images/1.png');
-    let img2 = await toBase64(__dirname + '/public/images/2.jpg');
-    setTimeout(() => {
-        res.send(JSON.stringify([
-            {
-                name: "Image 1",
-                src: img1
-            },
-            {
-                name: "Image 2",
-                src: img2
-            },
-            {
-                name: "Image 3",
-                src: img1
-            },
-            {
-                name: "Image 4",
-                src: img2
-            },
-            {
-                name: "Image 5",
-                src: img1
-            },
-            {
-                name: "Image 6",
-                src: img2
-            }
-        ]));        
-    }, 1000);
+    let page = parseInt(req.query.page);
+    console.log(page);
+    res.send(JSON.stringify(images.slice(page - 6, page)));        
+});
+
+app.get('/getImagesByName', async (req, res) => {
+    let name = req.query.name;
+    console.log(name);
+    let imagesForSending = images.filter(image => {
+        if(image.name.toLowerCase().indexOf(name) !== -1){
+            return true;
+        }else{
+            return false;
+        }
+    });
+    console.log(imagesForSending);
+    res.send(JSON.stringify(imagesForSending));        
 });
 
 app.post('/setTemplate', async (req, res) => {
