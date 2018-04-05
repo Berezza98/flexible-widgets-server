@@ -7,7 +7,7 @@ const base64Img = require('base64-img');
 const util = require('util');
 
 const { getFonts } = require('./get_data');
-const file = './templates.json';
+const { templates } = require('./templates');
 const { images } = require('./images');
 
 const app = express();
@@ -43,16 +43,27 @@ app.get('/getImagesByName', async (req, res) => {
     res.send(JSON.stringify(imagesForSending));        
 });
 
-app.post('/setTemplate', async (req, res) => {
-    await updater(file).append('templates', JSON.stringify(req.body));
+app.post('/setTemplate', (req, res) => {
+    templates.push(req.body);
     res.send('OK');
 });
 
-app.get('/getTemplates', async (req, res) => {
-    let readFile = util.promisify(jsonfile.readFile);
-    await readFile(file).then(data => {
-        res.send(data);
+app.get('/getTemplates', (req, res) => {
+    let page = parseInt(req.query.page);
+    res.send(JSON.stringify(templates.slice(page - 6, page)));
+});
+
+app.get('/getTemplatesByName', (req, res) => {
+    let name = req.query.name;
+    let templatesForSending = templates.filter(temp => {
+        if(temp.name.toLowerCase().indexOf(name) !== -1){
+            return true;
+        }else{
+            return false;
+        }
     });
+    console.log(templatesForSending);
+    res.send(JSON.stringify(templatesForSending)); 
 });
 
 app.listen(3300, () => {
