@@ -85,6 +85,6 @@ app.post('/saveImage', (req, res) => {
         });
 });
 
-app.listen(3300, () => {
+app.listen(process.env.PORT ? process.env.PORT : 3300, () => {
     console.log('Running on port 3300');
 });
