@@ -16,6 +16,7 @@
     "cheerio": "^1.0.0-rc.2",
     "cors": "^2.8.4",
     "express": "^4.16.2",
+    "express-fileupload": "^0.4.0",
     "jsonfile": "^4.0.0",
     "jsonfile-updater": "^3.1.0"
   }

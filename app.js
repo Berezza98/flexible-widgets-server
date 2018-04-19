@@ -5,12 +5,14 @@ const updater = require('jsonfile-updater');
 const jsonfile = require('jsonfile');
 const base64Img = require('base64-img');
 const util = require('util');
+const fileUpload = require('express-fileupload');
 
 const { getFonts } = require('./get_data');
 const { templates } = require('./templates');
 const { images } = require('./images');
 
 const app = express();
+app.use(fileUpload());
 app.use(cors());
 app.use(express.static('public'));
 app.use(bodyParser.json({limit: '50mb'}));
@@ -66,6 +68,23 @@ app.get('/getTemplatesByName', (req, res) => {
     res.send(JSON.stringify(templatesForSending)); 
 });
 
-app.listen(process.env.PORT, () => {
+app.post('/saveImage', (req, res) => {
+    if (!req.files)
+        return res.status(400).send('No files were uploaded.');
+ 
+        let sampleFile = req.files['items[]'];
+
+        sampleFile.mv(`./public/${sampleFile.name}`, function(err) {
+            if (err)
+            return res.status(500).send(err);
+            images.unshift({
+                name: sampleFile.name,
+                src: `https://flexible-app.herokuapp.com/images/${sampleFile.name}`
+            });
+            res.send(JSON.stringify(images.slice(0, 6)));
+        });
+});
+
+app.listen(3300, () => {
     console.log('Running on port 3300');
 });
