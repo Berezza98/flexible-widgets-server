@@ -1,0 +1,5 @@
+templates =[];
+
+module.exports = {
+  templates
+}
