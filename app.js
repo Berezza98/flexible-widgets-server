@@ -66,6 +66,6 @@ app.get('/getTemplatesByName', (req, res) => {
     res.send(JSON.stringify(templatesForSending)); 
 });
 
-app.listen(3300, () => {
+app.listen(process.env.PORT, () => {
     console.log('Running on port 3300');
 });
