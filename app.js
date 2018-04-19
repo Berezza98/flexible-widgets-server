@@ -79,7 +79,7 @@ app.post('/saveImage', (req, res) => {
             return res.status(500).send(err);
             images.unshift({
                 name: sampleFile.name,
-                src: `http://localhost:3300/images/${sampleFile.name}` //https://flexible-app.herokuapp.com/images/
+                src: `https://flexible-app.herokuapp.com/images/${sampleFile.name}` //https://flexible-app.herokuapp.com/images/ http://localhost:3300/images/
             });
             res.send(JSON.stringify(images.slice(0, 6)));
         });
