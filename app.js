@@ -74,12 +74,12 @@ app.post('/saveImage', (req, res) => {
  
         let sampleFile = req.files['items[]'];
 
-        sampleFile.mv(`./public/${sampleFile.name}`, function(err) {
+        sampleFile.mv(`./public/images/${sampleFile.name}`, function(err) {
             if (err)
             return res.status(500).send(err);
             images.unshift({
                 name: sampleFile.name,
-                src: `https://flexible-app.herokuapp.com/images/${sampleFile.name}`
+                src: `http://localhost:3300/images/${sampleFile.name}` //https://flexible-app.herokuapp.com/images/
             });
             res.send(JSON.stringify(images.slice(0, 6)));
         });
