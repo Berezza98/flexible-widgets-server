@@ -1,5 +1,5 @@
-let img1 = 'http://localhost:3300/images/1.png';
-let img2 = 'http://localhost:3300/images/2.jpg';
+let img1 = 'https://flexible-app.herokuapp.com/images/1.png';
+let img2 = 'https://flexible-app.herokuapp.com/images/2.jpg';
 
 let images = [
     {
