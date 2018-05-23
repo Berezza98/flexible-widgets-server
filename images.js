@@ -49,6 +49,54 @@ let images = [
     {
         name: "Image 12",
         src: img2
+    },
+    {
+        name: "Image 1 NEW",
+        src: img1
+    },
+    {
+        name: "Image 2 NEW",
+        src: img2
+    },
+    {
+        name: "Image 3 NEW",
+        src: img1
+    },
+    {
+        name: "Image 4 NEW",
+        src: img2
+    },
+    {
+        name: "Image 5 NEW",
+        src: img1
+    },
+    {
+        name: "Image 6 NEW",
+        src: img2
+    },
+    {
+        name: "Image 7 NEW",
+        src: img1
+    },
+    {
+        name: "Image 8 NEW",
+        src: img2
+    },
+    {
+        name: "Image 9 NEW",
+        src: img1
+    },
+    {
+        name: "Image 10 NEW",
+        src: img2
+    },
+    {
+        name: "Image 11 NEW",
+        src: img1
+    },
+    {
+        name: "Image 12 NEW",
+        src: img2
     }
 ];
 

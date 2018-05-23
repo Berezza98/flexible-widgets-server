@@ -28,7 +28,7 @@ app.get('/getFonts', (req, res) => {
 app.get('/getImages', async (req, res) => {
     let page = parseInt(req.query.page);
     console.log(page);
-    res.send(JSON.stringify(images.slice(page - 6, page)));        
+    res.send(JSON.stringify(images.slice(page - 12, page)));        
 });
 
 app.get('/getImagesByName', async (req, res) => {
