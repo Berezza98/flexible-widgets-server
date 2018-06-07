@@ -28,7 +28,7 @@ app.get('/getFonts', (req, res) => {
 app.get('/getImages', async (req, res) => {
     let page = parseInt(req.query.page);
     console.log(page);
-    res.send(JSON.stringify(images.slice(page - 12, page)));        
+    res.send(JSON.stringify(images.slice(page - 16, page)));        
 });
 
 app.get('/getImagesByName', async (req, res) => {
@@ -81,7 +81,7 @@ app.post('/saveImage', (req, res) => {
                 name: sampleFile.name,
                 src: `https://flexible-app.herokuapp.com/images/${sampleFile.name}` //https://flexible-app.herokuapp.com/images/ http://localhost:3300/images/
             });
-            res.send(JSON.stringify(images.slice(0, 6)));
+            res.send(JSON.stringify(images.slice(0, 16)));
         });
 });
 
