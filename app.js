@@ -28,7 +28,7 @@ app.get('/getFonts', (req, res) => {
 app.get('/getImages', async (req, res) => {
     let page = parseInt(req.query.page);
     console.log(page);
-    res.send(JSON.stringify(images.slice(page - 16, page)));        
+    res.send(JSON.stringify(images.slice((page * 16) - 16, page * 16)));        
 });
 
 app.get('/getImagesByName', async (req, res) => {
@@ -52,7 +52,7 @@ app.post('/setTemplate', (req, res) => {
 
 app.get('/getTemplates', (req, res) => {
     let page = parseInt(req.query.page);
-    res.send(JSON.stringify(templates.slice(page - 6, page)));
+    res.send(JSON.stringify(templates.slice((page * 6) - 6, page * 6)));
 });
 
 app.get('/getTemplatesByName', (req, res) => {
