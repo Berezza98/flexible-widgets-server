@@ -45,6 +45,18 @@ app.get('/getImagesByName', async (req, res) => {
     res.send(JSON.stringify(imagesForSending));        
 });
 
+app.get('/getImageCategories', async (req, res) => {
+    let imageCategories = [{
+        id: 1,
+        name: "Nature"
+    },
+    {
+        id: 2,
+        name: "Animals"
+    }];
+    res.send(JSON.stringify(imageCategories));        
+});
+
 app.post('/setTemplate', (req, res) => {
     templates.push(req.body);
     res.send('OK');
