@@ -120,7 +120,7 @@ let images = [
     {
         name: "Image 12 NEW",
         src: img2,
-        id: 
+        id: 47
     },
     {
         name: "Image 1**",
@@ -205,12 +205,12 @@ let images = [
     {
         name: "Image 5 NEW**",
         src: img1,
-        id: 
+        id: 45
     },
     {
         name: "Image 6 NEW**",
         src: img2,
-        id: 
+        id: 46
     },
     {
         name: "Image 7 NEW**",
@@ -240,7 +240,7 @@ let images = [
     {
         name: "Image 12 NEW**",
         src: img2,
-        id: 
+        id: 44
     }
 ];
 
